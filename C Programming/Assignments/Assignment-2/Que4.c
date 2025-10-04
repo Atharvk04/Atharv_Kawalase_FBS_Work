@@ -20,6 +20,7 @@ void main()
 	}
 	else
 	{
-		printf("Pass");
+		printf("Fail");
 	}
+
 }
