@@ -2,26 +2,21 @@
 
 #include<stdio.h>
 
-void temparature();
+void temperature();
 void main ()
 {
-	float result();
-	
-	result = temparature;
-	
-	printf("fahrenheit : %.2f",a);
+	temperature();
 }
-
-void temperature()
+void temperature ()
 {
 	float celcius;
-	float fahrenheit,a;
+	float fahrenheit;
 	
 	printf("Enter the Temperature in Celcius: ");
 	scanf("%f",&celcius);
 	
-	a = (celcius * 9/5) + 32;
+	fahrenheit = (celcius * 9/5) + 32;
 	
-	return a;
-
+	printf("Temperature in Fahrenheit: %.2f",fahrenheit);
+	
 }
