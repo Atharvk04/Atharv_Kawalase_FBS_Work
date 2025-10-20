@@ -13,10 +13,11 @@ void main ()
 	}
 	if (sum == n)
 	{
-		printf("Number is Perfect");
+		printf("Number is Prime");
 	}
 	else
 	{
 		printf("Number is Not Prime");
 	}
+
 }
