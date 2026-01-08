@@ -1,0 +1,224 @@
+1. Login to MySQL and view all databases already present. You should get
+following result :
+
+ show databases;
++--------------------+
+| Database           |
++--------------------+
+| assi_1             |
+| hotel_management   |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| septjava25         |
+| sys                |
+| world              |
++--------------------+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+
+2. Write an SQL statement to create a simple table countries including columns
+country_id,country_name and region_id. After this display the structure of
+table as below :
+
+       create table countries
+    -> (county_id int, country_name varchar(20),
+    -> region_id int);
+
+desc countries;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| county_id    | int         | YES  |     | NULL    |       |
+| country_name | varchar(20) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+3. Write an SQL statement to create a table named jobs including columns
+job_id, job_title, min_salary, max_salary and check whether the
+max_salary amount exceeding the upper limit 25000. Also set job_id as
+primary key and entering null values for job_title is not allowed.
+
+
+       create table jobs
+    -> (job_id int, job_title varchar(20),
+    -> min_salary double, max_salary double);
+
+       alter table jobs
+    -> modify column max_salary double check (max_salary <= 25000);
+
+
+       mysql> alter table jobs
+    -> add primary key (job_id);
+
+       alter table jobs
+    -> modify column job_title varchar(20) not null;
+	
+ desc jobs;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| job_id     | int         | NO   | PRI | NULL    |       |
+| job_title  | varchar(20) | NO   |     | NULL    |       |
+| min_salary | double      | YES  |     | NULL    |       |
+| max_salary | double      | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+4. Write a SQL statement to create a table named job_histry including columns
+employee_id, start_date, end_date, job_id and department_id
+
+
+       create table job_histry
+    -> (employee_id int, start_date Date,
+    -> end_date Date, job_id int, department_id int);
+
+
+ show tables;
++------------------+
+| Tables_in_assi_1 |
++------------------+
+| countries        |
+| job_histry       |
+| jobs             |
++------------------+
+
+--------------------------------------------------------------------------------------------------------------
+
+5. Write an SQL statement to alter a table named countries to make sure that no
+duplicate data against column country_id will be allowed at the time of
+insertion.
+
+
+       alter table countries
+    -> modify column country_id int unique;
+
+ desc countries;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  | UNI | NULL    |       |
+| country_name | varchar(20) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+--------------------------------------------------------------------------------------------------------------
+
+6. Write an SQL statement to create a table named jobs including columns job_id,
+job_title, min_salary and max_salary, and make sure that, the default value
+for job_title is blank and min_salary is 8000 and max_salary is NULL will be
+entered automatically at the time of insertion if no value assigned for the
+specified columns.
+
+
+
+       create table jobs
+    -> (job_id int, job_title varchar(20),
+    -> min_salary double, max_salary double);
+
+	
+       alter table jobs
+    -> modify column job_title varchar(20) default "";
+
+	
+       alter table jobs
+    -> modify column min_salary double default 8000,
+    -> modify column max_salary double default NULL;
+
+
+desc jobs;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| job_id     | int         | NO   | PRI | NULL    |       |
+| job_title  | varchar(20) | YES  |     |         |       |
+| min_salary | double      | YES  |     | 8000    |       |
+| max_salary | double      | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+7. Create a Department table with following structure:
+
+
+ 	create table department
+    -> (Department_id decimal(4,0), Department_name varchar(30),
+    -> Manager_id decimal(6,0), Location_id decimal(4,0));
+
+desc department;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| Department_id   | decimal(4,0) | YES  |     | NULL    |       |
+| Department_name | varchar(30)  | YES  |     | NULL    |       |
+| Manager_id      | decimal(6,0) | YES  |     | NULL    |       |
+| Location_id     | decimal(4,0) | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+
+
+
+       alter table department
+    -> modify column Department_id decimal(4,0) not null,
+    -> modify column Department_name varchar(30) not null,
+    -> modify column Manager_id decimal(6,0) not null;
+
+desc department;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| Department_id   | decimal(4,0) | NO   |     | NULL    |       |
+| Department_name | varchar(30)  | NO   |     | NULL    |       |
+| Manager_id      | decimal(6,0) | NO   |     | NULL    |       |
+| Location_id     | decimal(4,0) | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+
+
+	
+       alter table department
+    -> add primary key (Department_id, Manager_id);
+
+desc department;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| Department_id   | decimal(4,0) | NO   | PRI | NULL    |       |
+| Department_name | varchar(30)  | NO   |     | NULL    |       |
+| Manager_id      | decimal(6,0) | NO   | PRI | NULL    |       |
+| Location_id     | decimal(4,0) | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+
+
+
+
+	
+       alter table department
+    -> modify column Department_id decimal(4,0) default 0,
+    -> modify column Manager_id decimal(6,0) default 0;
+
+
+desc department;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| Department_id   | decimal(4,0) | NO   | PRI | 0       |       |
+| Department_name | varchar(30)  | NO   |     | NULL    |       |
+| Manager_id      | decimal(6,0) | NO   | PRI | 0       |       |
+| Location_id     | decimal(4,0) | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+
+
+
+
+
+
+	
