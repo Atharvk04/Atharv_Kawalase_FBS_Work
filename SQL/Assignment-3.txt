@@ -1,0 +1,213 @@
+1. Write a SQL statement to insert a record as follows:
+Employees :
+
+
+table employees;
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+| Employee_id | First_Name | Last_Name | Email                | PHONE_NUMBER | Hire_Date  | Job_Id  | Salary | Commission_PCT | Manager_Id | Department_Id |
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+|         100 | Steven     | King      | sking@gmail.com      | 515.123.4567 | 1987-06-17 | AD_PRES |  24000 |              0 |        200 |            10 |
+|         101 | Neena      | Kochhar   | nkochhar@gmail.com   | 515.123.4568 | 1987-06-18 | AD_VP   |  17000 |              0 |        200 |            10 |
+|         102 | Lex        | De Haan   | ldehaan@gmail.com    | 515.123.4569 | 1987-06-19 | AD_VP   |  17000 |              0 |        200 |            10 |
+|         103 | Alexander  | Hunold    | ahunold@gmail.com    | 590.423.4567 | 1987-06-20 | IT_PROG |   9000 |              0 |        103 |            60 |
+|         104 | Bruce      | Ernst     | bernst@gmail.com     | 590.423.4568 | 1987-06-21 | IT_PROG |   6000 |              0 |        103 |            60 |
+|         105 | David      | Austin    | daustin@gmail.com    | 590.423.4569 | 1987-06-22 | IT_PROG |   4800 |              0 |        103 |            60 |
+|         106 | Valli      | Pataballa | vpataballa@gmail.com | 590.423.4560 | 1987-06-23 | IT_PROG |   4800 |              0 |        103 |            60 |
+|         107 | Diana      | Lorentz   | dlorentz@gmail.com   | 590.423.5567 | 1987-06-24 | IT_PROG |   4200 |              0 |        114 |            30 |
+|         108 | Nancy      | Greenberg | ngreenberg@gmail.com | 515.124.4569 | 1987-06-25 | SA_MAN  |  12000 |              0 |        145 |            80 |
+|         109 | Daniel     | Faviet    | dfaviet@gmail.com    | 515.124.4169 | 1987-06-26 | SA_MAN  |   9000 |              0 |        145 |            80 |
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+
+
+table department;
++---------------+------------------+------------+-------------+
+| Department_Id | Department_name  | Manager_Id | Location_Id |
++---------------+------------------+------------+-------------+
+|            10 | Administration   |        200 |        1700 |
+|            20 | Marketing        |        201 |        1800 |
+|            30 | Purchasing       |        114 |        1700 |
+|            40 | Human Resources  |        203 |        2400 |
+|            50 | Shipping         |        121 |        1500 |
+|            60 | IT               |        103 |        1400 |
+|            70 | Public Relations |        204 |        2700 |
+|            80 | Sales            |        145 |        2500 |
++---------------+------------------+------------+-------------+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write a SQL statement to insert 3 rows by a single insert statement.
+
+
+insert into employees
+    -> values(110,"Alex","Riccardo","ariccardo@gmail.com","515.124.4170","1987-06-27","AD_PRES",16000.00,0.00,201,20),
+    -> (111,"Jack","Sparrow","jsparrow@gmail.com","515.125.4171","1987-06-28","IT_PROG",6000.00,0.00,203,30),
+    -> (112,"Will","Jacks","wjacks@gmail.com","516.125.4172","1987-06-29","SA_MAN",5000.00,0.00,121,50);
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. Write a SQL statement to insert one row in jobs table to ensure that no duplicate
+value will be entered in the job_id column.
+
+
+
+
+create table jobs
+    -> (Job_Id Varchar(20) Primary Key,
+    -> Job_Title varchar(30),
+    -> min_salary int,
+    -> max_salary int);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into jobs
+    -> values('IT_PROG','Programmer',4000,10000);
+Query OK, 1 row affected (0.03 sec)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Write SQL statement to increment salary of each emp by 10%.
+
+
+ update employees
+    -> set salary = salary + (salary * 0.10);
+Query OK, 13 rows affected (0.02 sec)
+Rows matched: 13  Changed: 13  Warnings: 0
+
+mysql> table employees;
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+| Employee_id | First_Name | Last_Name | Email                | PHONE_NUMBER | Hire_Date  | Job_Id  | Salary | Commission_PCT | Manager_Id | Department_Id |
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+|         100 | Steven     | King      | sking@gmail.com      | 515.123.4567 | 1987-06-17 | AD_PRES |  26400 |              0 |        200 |            10 |
+|         101 | Neena      | Kochhar   | nkochhar@gmail.com   | 515.123.4568 | 1987-06-18 | AD_VP   |  18700 |              0 |        200 |            10 |
+|         102 | Lex        | De Haan   | ldehaan@gmail.com    | 515.123.4569 | 1987-06-19 | AD_VP   |  18700 |              0 |        200 |            10 |
+|         103 | Alexander  | Hunold    | ahunold@gmail.com    | 590.423.4567 | 1987-06-20 | IT_PROG |   9900 |              0 |        103 |            60 |
+|         104 | Bruce      | Ernst     | bernst@gmail.com     | 590.423.4568 | 1987-06-21 | IT_PROG |   6600 |              0 |        103 |            60 |
+|         105 | David      | Austin    | daustin@gmail.com    | 590.423.4569 | 1987-06-22 | IT_PROG |   5280 |              0 |        103 |            60 |
+|         106 | Valli      | Pataballa | vpataballa@gmail.com | 590.423.4560 | 1987-06-23 | IT_PROG |   5280 |              0 |        103 |            60 |
+|         107 | Diana      | Lorentz   | dlorentz@gmail.com   | 590.423.5567 | 1987-06-24 | IT_PROG |   4620 |              0 |        114 |            30 |
+|         108 | Nancy      | Greenberg | ngreenberg@gmail.com | 515.124.4569 | 1987-06-25 | SA_MAN  |  13200 |              0 |        145 |            80 |
+|         109 | Daniel     | Faviet    | dfaviet@gmail.com    | 515.124.4169 | 1987-06-26 | SA_MAN  |   9900 |              0 |        145 |            80 |
+|         110 | Alex       | Riccardo  | ariccardo@gmail.com  | 515.124.4170 | 1987-06-27 | AD_PRES |  17600 |              0 |        201 |            20 |
+|         111 | Jack       | Sparrow   | jsparrow@gmail.com   | 515.125.4171 | 1987-06-28 | IT_PROG |   6600 |              0 |        203 |            30 |
+|         112 | Will       | Jacks     | wjacks@gmail.com     | 516.125.4172 | 1987-06-29 | SA_MAN  |   5500 |              0 |        121 |            50 |
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+13 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Write a SQL statement to change the email column of employees table with 'not
+available' for those employees whose department_id is 80 and gets a
+commission is less than .20%
+
+
+
+
+
+ update employees
+    -> set Email = 'Not Available'
+    -> where Department_Id = 80
+    -> and commission_pct < 0.20;
+Query OK, 2 rows affected (0.03 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> table employees;
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+| Employee_id | First_Name | Last_Name | Email                | PHONE_NUMBER | Hire_Date  | Job_Id  | Salary | Commission_PCT | Manager_Id | Department_Id |
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+|         100 | Steven     | King      | sking@gmail.com      | 515.123.4567 | 1987-06-17 | AD_PRES |  26400 |              0 |        200 |            10 |
+|         101 | Neena      | Kochhar   | nkochhar@gmail.com   | 515.123.4568 | 1987-06-18 | AD_VP   |  18700 |              0 |        200 |            10 |
+|         102 | Lex        | De Haan   | ldehaan@gmail.com    | 515.123.4569 | 1987-06-19 | AD_VP   |  18700 |              0 |        200 |            10 |
+|         103 | Alexander  | Hunold    | ahunold@gmail.com    | 590.423.4567 | 1987-06-20 | IT_PROG |   9900 |              0 |        103 |            60 |
+|         104 | Bruce      | Ernst     | bernst@gmail.com     | 590.423.4568 | 1987-06-21 | IT_PROG |   6600 |              0 |        103 |            60 |
+|         105 | David      | Austin    | daustin@gmail.com    | 590.423.4569 | 1987-06-22 | IT_PROG |   5280 |              0 |        103 |            60 |
+|         106 | Valli      | Pataballa | vpataballa@gmail.com | 590.423.4560 | 1987-06-23 | IT_PROG |   5280 |              0 |        103 |            60 |
+|         107 | Diana      | Lorentz   | dlorentz@gmail.com   | 590.423.5567 | 1987-06-24 | IT_PROG |   4620 |              0 |        114 |            30 |
+|         108 | Nancy      | Greenberg | Not Available        | 515.124.4569 | 1987-06-25 | SA_MAN  |  13200 |              0 |        145 |            80 |
+|         109 | Daniel     | Faviet    | Not Available        | 515.124.4169 | 1987-06-26 | SA_MAN  |   9900 |              0 |        145 |            80 |
+|         110 | Alex       | Riccardo  | ariccardo@gmail.com  | 515.124.4170 | 1987-06-27 | AD_PRES |  17600 |              0 |        201 |            20 |
+|         111 | Jack       | Sparrow   | jsparrow@gmail.com   | 515.125.4171 | 1987-06-28 | IT_PROG |   6600 |              0 |        203 |            30 |
+|         112 | Will       | Jacks     | wjacks@gmail.com     | 516.125.4172 | 1987-06-29 | SA_MAN  |   5500 |              0 |        121 |            50 |
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+13 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. Write a SQL statement to change the email column of employees table with 'not
+available' for those employees who belongs to the 'Purchasing' department.
+
+
+ update employees
+    -> set email = 'Not Available'
+    -> where DEpartment_Id in
+    -> (Select Department_Id from department where department_name = "Purchasing");
+Query OK, 2 rows affected (0.03 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> table employees;
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+| Employee_id | First_Name | Last_Name | Email                | PHONE_NUMBER | Hire_Date  | Job_Id  | Salary | Commission_PCT | Manager_Id | Department_Id |
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+|         100 | Steven     | King      | sking@gmail.com      | 515.123.4567 | 1987-06-17 | AD_PRES |  26400 |              0 |        200 |            10 |
+|         101 | Neena      | Kochhar   | nkochhar@gmail.com   | 515.123.4568 | 1987-06-18 | AD_VP   |  18700 |              0 |        200 |            10 |
+|         102 | Lex        | De Haan   | ldehaan@gmail.com    | 515.123.4569 | 1987-06-19 | AD_VP   |  18700 |              0 |        200 |            10 |
+|         103 | Alexander  | Hunold    | ahunold@gmail.com    | 590.423.4567 | 1987-06-20 | IT_PROG |   9900 |              0 |        103 |            60 |
+|         104 | Bruce      | Ernst     | bernst@gmail.com     | 590.423.4568 | 1987-06-21 | IT_PROG |   6600 |              0 |        103 |            60 |
+|         105 | David      | Austin    | daustin@gmail.com    | 590.423.4569 | 1987-06-22 | IT_PROG |   5280 |              0 |        103 |            60 |
+|         106 | Valli      | Pataballa | vpataballa@gmail.com | 590.423.4560 | 1987-06-23 | IT_PROG |   5280 |              0 |        103 |            60 |
+|         107 | Diana      | Lorentz   | Not Available        | 590.423.5567 | 1987-06-24 | IT_PROG |   4620 |              0 |        114 |            30 |
+|         108 | Nancy      | Greenberg | Not Available        | 515.124.4569 | 1987-06-25 | SA_MAN  |  13200 |              0 |        145 |            80 |
+|         109 | Daniel     | Faviet    | Not Available        | 515.124.4169 | 1987-06-26 | SA_MAN  |   9900 |              0 |        145 |            80 |
+|         110 | Alex       | Riccardo  | ariccardo@gmail.com  | 515.124.4170 | 1987-06-27 | AD_PRES |  17600 |              0 |        201 |            20 |
+|         111 | Jack       | Sparrow   | Not Available        | 515.125.4171 | 1987-06-28 | IT_PROG |   6600 |              0 |        203 |            30 |
+|         112 | Will       | Jacks     | wjacks@gmail.com     | 516.125.4172 | 1987-06-29 | SA_MAN  |   5500 |              0 |        121 |            50 |
++-------------+------------+-----------+----------------------+--------------+------------+---------+--------+----------------+------------+---------------+
+13 rows in set (0.00 sec)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. Write a SQL statement to change the email and commission_pct column of
+employees table with 'not available' and 0.10 for all employees.
+
+
+
+
+ update employees
+    -> set Email = "Not Available"
+    -> ,
+    -> commission_pct = 0.10;
+Query OK, 13 rows affected (0.01 sec)
+Rows matched: 13  Changed: 13  Warnings: 0
+
+mysql> table employees;
++-------------+------------+-----------+---------------+--------------+------------+---------+--------+----------------+------------+---------------+
+| Employee_id | First_Name | Last_Name | Email         | PHONE_NUMBER | Hire_Date  | Job_Id  | Salary | Commission_PCT | Manager_Id | Department_Id |
++-------------+------------+-----------+---------------+--------------+------------+---------+--------+----------------+------------+---------------+
+|         100 | Steven     | King      | Not Available | 515.123.4567 | 1987-06-17 | AD_PRES |  26400 |            0.1 |        200 |            10 |
+|         101 | Neena      | Kochhar   | Not Available | 515.123.4568 | 1987-06-18 | AD_VP   |  18700 |            0.1 |        200 |            10 |
+|         102 | Lex        | De Haan   | Not Available | 515.123.4569 | 1987-06-19 | AD_VP   |  18700 |            0.1 |        200 |            10 |
+|         103 | Alexander  | Hunold    | Not Available | 590.423.4567 | 1987-06-20 | IT_PROG |   9900 |            0.1 |        103 |            60 |
+|         104 | Bruce      | Ernst     | Not Available | 590.423.4568 | 1987-06-21 | IT_PROG |   6600 |            0.1 |        103 |            60 |
+|         105 | David      | Austin    | Not Available | 590.423.4569 | 1987-06-22 | IT_PROG |   5280 |            0.1 |        103 |            60 |
+|         106 | Valli      | Pataballa | Not Available | 590.423.4560 | 1987-06-23 | IT_PROG |   5280 |            0.1 |        103 |            60 |
+|         107 | Diana      | Lorentz   | Not Available | 590.423.5567 | 1987-06-24 | IT_PROG |   4620 |            0.1 |        114 |            30 |
+|         108 | Nancy      | Greenberg | Not Available | 515.124.4569 | 1987-06-25 | SA_MAN  |  13200 |            0.1 |        145 |            80 |
+|         109 | Daniel     | Faviet    | Not Available | 515.124.4169 | 1987-06-26 | SA_MAN  |   9900 |            0.1 |        145 |            80 |
+|         110 | Alex       | Riccardo  | Not Available | 515.124.4170 | 1987-06-27 | AD_PRES |  17600 |            0.1 |        201 |            20 |
+|         111 | Jack       | Sparrow   | Not Available | 515.125.4171 | 1987-06-28 | IT_PROG |   6600 |            0.1 |        203 |            30 |
+|         112 | Will       | Jacks     | Not Available | 516.125.4172 | 1987-06-29 | SA_MAN  |   5500 |            0.1 |        121 |            50 |
++-------------+------------+-----------+---------------+--------------+------------+---------+--------+----------------+------------+---------------+
+13 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
