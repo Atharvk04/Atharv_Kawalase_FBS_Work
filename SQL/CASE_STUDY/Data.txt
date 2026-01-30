@@ -1,0 +1,820 @@
+ INSERT INTO patient_info
+    -> (Patient_ID, First_Name, Last_Name, gender, contact, address, blood_group, insurance, emergency_contact, dob, marital_status, age)
+    -> VALUES
+    -> (1,'Amit','Sharma','Male',900000001,'Delhi','A+','LIC',900100001,'1995-03-12','Single',30),
+    -> (2,'Neha','Verma','Female',900000002,'Mumbai','B+','HDFC',900100002,'1998-07-21','Single',27),
+    -> (3,'Rahul','Singh','Male',900000003,'Pune','O+','ICICI',900100003,'1990-01-15','Married',35),
+    -> (4,'Priya','Patel','Female',900000004,'Ahmedabad','AB+','Star',900100004,'1996-05-19','Single',29),
+    -> (5,'Rohit','Mehta','Male',900000005,'Surat','B-','LIC',900100005,'1989-11-10','Married',36),
+    ->
+    -> (6,'Anjali','Gupta','Female',900000006,'Jaipur','A-','HDFC',900100006,'1997-02-03','Single',28),
+    -> (7,'Vikas','Yadav','Male',900000007,'Gurgaon','O-','ICICI',900100007,'1992-06-17','Married',33),
+    -> (8,'Pooja','Mishra','Female',900000008,'Bhopal','B+','Star',900100008,'1999-09-22','Single',25),
+    -> (9,'Suresh','Kumar','Male',900000009,'Chennai','A+','LIC',900100009,'1985-12-05','Married',40),
+    -> (10,'Kiran','Rao','Female',900000010,'Hyderabad','AB-','HDFC',900100010,'1994-04-14','Single',31),
+    ->
+    -> (11,'Arjun','Nair','Male',900000011,'Kochi','O+','ICICI',900100011,'1993-08-11','Single',32),
+    -> (12,'Sneha','Iyer','Female',900000012,'Madurai','A+','Star',900100012,'1996-10-01','Single',29),
+    -> (13,'Manish','Agarwal','Male',900000013,'Kolkata','B+','LIC',900100013,'1988-03-09','Married',37),
+    -> (14,'Ritu','Malhotra','Female',900000014,'Delhi','O-','HDFC',900100014,'1995-01-25','Single',30),
+    -> (15,'Nikhil','Bansal','Male',900000015,'Noida','A-','ICICI',900100015,'1991-07-07','Married',34),
+    ->
+    -> (16,'Kavita','Joshi','Female',900000016,'Dehradun','AB+','Star',900100016,'1987-02-18','Married',38),
+    -> (17,'Deepak','Chauhan','Male',900000017,'Meerut','B-','LIC',900100017,'1990-06-30','Married',35),
+    -> (18,'Simran','Kaur','Female',900000018,'Amritsar','O+','HDFC',900100018,'1998-12-12','Single',26),
+    -> (19,'Mohit','Saxena','Male',900000019,'Bareilly','A+','ICICI',900100019,'1993-05-03','Single',32),
+    -> (20,'Nisha','Kapoor','Female',900000020,'Ludhiana','B+','Star',900100020,'1997-09-09','Single',27),
+    ->
+    -> (21,'Rajesh','Khanna','Male',900000021,'Delhi','AB-','LIC',900100021,'1984-11-28','Married',41),
+    -> (22,'Aarti','Sinha','Female',900000022,'Patna','O-','HDFC',900100022,'1996-03-17','Single',29),
+    -> (23,'Sunil','Joshi','Male',900000023,'Udaipur','A+','ICICI',900100023,'1989-08-08','Married',36),
+    -> (24,'Meena','Reddy','Female',900000024,'Vijayawada','B-','Star',900100024,'1995-01-02','Single',30),
+    -> (25,'Tarun','Kapoor','Male',900000025,'Chandigarh','O+','LIC',900100025,'1992-10-20','Married',33);
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+mysql> table Patient_Info;
++------------+------------+-----------+--------+-----------+------------+-------------+-----------+-------------------+------------+----------------+------+
+| Patient_ID | First_Name | Last_Name | gender | contact   | address    | blood_group | insurance | emergency_contact | dob        | marital_status | age  |
++------------+------------+-----------+--------+-----------+------------+-------------+-----------+-------------------+------------+----------------+------+
+|          1 | Amit       | Sharma    | Male   | 900000001 | Delhi      | A+          | LIC       |         900100001 | 1995-03-12 | Single         |   30 |
+|          2 | Neha       | Verma     | Female | 900000002 | Mumbai     | B+          | HDFC      |         900100002 | 1998-07-21 | Single         |   27 |
+|          3 | Rahul      | Singh     | Male   | 900000003 | Pune       | O+          | ICICI     |         900100003 | 1990-01-15 | Married        |   35 |
+|          4 | Priya      | Patel     | Female | 900000004 | Ahmedabad  | AB+         | Star      |         900100004 | 1996-05-19 | Single         |   29 |
+|          5 | Rohit      | Mehta     | Male   | 900000005 | Surat      | B-          | LIC       |         900100005 | 1989-11-10 | Married        |   36 |
+|          6 | Anjali     | Gupta     | Female | 900000006 | Jaipur     | A-          | HDFC      |         900100006 | 1997-02-03 | Single         |   28 |
+|          7 | Vikas      | Yadav     | Male   | 900000007 | Gurgaon    | O-          | ICICI     |         900100007 | 1992-06-17 | Married        |   33 |
+|          8 | Pooja      | Mishra    | Female | 900000008 | Bhopal     | B+          | Star      |         900100008 | 1999-09-22 | Single         |   25 |
+|          9 | Suresh     | Kumar     | Male   | 900000009 | Chennai    | A+          | LIC       |         900100009 | 1985-12-05 | Married        |   40 |
+|         10 | Kiran      | Rao       | Female | 900000010 | Hyderabad  | AB-         | HDFC      |         900100010 | 1994-04-14 | Single         |   31 |
+|         11 | Arjun      | Nair      | Male   | 900000011 | Kochi      | O+          | ICICI     |         900100011 | 1993-08-11 | Single         |   32 |
+|         12 | Sneha      | Iyer      | Female | 900000012 | Madurai    | A+          | Star      |         900100012 | 1996-10-01 | Single         |   29 |
+|         13 | Manish     | Agarwal   | Male   | 900000013 | Kolkata    | B+          | LIC       |         900100013 | 1988-03-09 | Married        |   37 |
+|         14 | Ritu       | Malhotra  | Female | 900000014 | Delhi      | O-          | HDFC      |         900100014 | 1995-01-25 | Single         |   30 |
+|         15 | Nikhil     | Bansal    | Male   | 900000015 | Noida      | A-          | ICICI     |         900100015 | 1991-07-07 | Married        |   34 |
+|         16 | Kavita     | Joshi     | Female | 900000016 | Dehradun   | AB+         | Star      |         900100016 | 1987-02-18 | Married        |   38 |
+|         17 | Deepak     | Chauhan   | Male   | 900000017 | Meerut     | B-          | LIC       |         900100017 | 1990-06-30 | Married        |   35 |
+|         18 | Simran     | Kaur      | Female | 900000018 | Amritsar   | O+          | HDFC      |         900100018 | 1998-12-12 | Single         |   26 |
+|         19 | Mohit      | Saxena    | Male   | 900000019 | Bareilly   | A+          | ICICI     |         900100019 | 1993-05-03 | Single         |   32 |
+|         20 | Nisha      | Kapoor    | Female | 900000020 | Ludhiana   | B+          | Star      |         900100020 | 1997-09-09 | Single         |   27 |
+|         21 | Rajesh     | Khanna    | Male   | 900000021 | Delhi      | AB-         | LIC       |         900100021 | 1984-11-28 | Married        |   41 |
+|         22 | Aarti      | Sinha     | Female | 900000022 | Patna      | O-          | HDFC      |         900100022 | 1996-03-17 | Single         |   29 |
+|         23 | Sunil      | Joshi     | Male   | 900000023 | Udaipur    | A+          | ICICI     |         900100023 | 1989-08-08 | Married        |   36 |
+|         24 | Meena      | Reddy     | Female | 900000024 | Vijayawada | B-          | Star      |         900100024 | 1995-01-02 | Single         |   30 |
+|         25 | Tarun      | Kapoor    | Male   | 900000025 | Chandigarh | O+          | LIC       |         900100025 | 1992-10-20 | Married        |   33 |
++------------+------------+-----------+--------+-----------+------------+-------------+-----------+-------------------+------------+----------------+------+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+INSERT INTO doctor_info
+    -> (Doctor_ID, Doctor_Name, gender, contact, qualification, years_of_exp, department, specialization, licence_number)
+    -> VALUES
+    -> (1,'Dr. Rajesh Kumar','Male',910000001,'MBBS, MD',15,'Cardiology','Cardiologist','LIC-IND-1001'),
+    -> (2,'Dr. Neha Sharma','Female',910000002,'MBBS, MS',10,'Gynecology','Gynecologist','LIC-IND-1002'),
+    -> (3,'Dr. Amit Verma','Male',910000003,'MBBS, MD',12,'Neurology','Neurologist','LIC-IND-1003'),
+    -> (4,'Dr. Pooja Mehta','Female',910000004,'MBBS, DGO',8,'Gynecology','Gynecologist','LIC-IND-1004'),
+    -> (5,'Dr. Rohit Singh','Male',910000005,'MBBS, MS',14,'Orthopedics','Orthopedic','LIC-IND-1005'),
+    ->
+    -> (6,'Dr. Anjali Gupta','Female',910000006,'MBBS, MD',9,'Dermatology','Dermatologist','LIC-IND-1006'),
+    -> (7,'Dr. Vikas Yadav','Male',910000007,'MBBS, MD',11,'General','Physician','LIC-IND-1007'),
+    -> (8,'Dr. Sneha Iyer','Female',910000008,'MBBS, MD',7,'Pediatrics','Pediatrician','LIC-IND-1008'),
+    -> (9,'Dr. Suresh Rao','Male',910000009,'MBBS, MS',16,'ENT','ENT Specialist','LIC-IND-1009'),
+    -> (10,'Dr. Kavita Nair','Female',910000010,'MBBS, MD',13,'Psychiatry','Psychiatrist','LIC-IND-1010'),
+    ->
+    -> (11,'Dr. Arjun Malhotra','Male',910000011,'MBBS, MS',18,'Surgery','Surgeon','LIC-IND-1011'),
+    -> (12,'Dr. Ritu Bansal','Female',910000012,'MBBS, MD',10,'Oncology','Oncologist','LIC-IND-1012'),
+    -> (13,'Dr. Nikhil Joshi','Male',910000013,'MBBS, MD',9,'Radiology','Radiologist','LIC-IND-1013'),
+    -> (14,'Dr. Meena Reddy','Female',910000014,'MBBS, DCH',6,'Pediatrics','Pediatrician','LIC-IND-1014'),
+    -> (15,'Dr. Sanjay Kapoor','Male',910000015,'MBBS, MD',20,'Cardiology','Cardiologist','LIC-IND-1015'),
+    ->
+    -> (16,'Dr. Alka Mishra','Female',910000016,'MBBS, MD',11,'Pathology','Pathologist','LIC-IND-1016'),
+    -> (17,'Dr. Deepak Chauhan','Male',910000017,'MBBS, MS',13,'Orthopedics','Orthopedic','LIC-IND-1017'),
+    -> (18,'Dr. Simran Kaur','Female',910000018,'MBBS, MD',8,'Gynecology','Gynecologist','LIC-IND-1018'),
+    -> (19,'Dr. Mohit Saxena','Male',910000019,'MBBS, MD',10,'General','Physician','LIC-IND-1019'),
+    -> (20,'Dr. Nisha Khanna','Female',910000020,'MBBS, MD',9,'Endocrinology','Endocrinologist','LIC-IND-1020'),
+    ->
+    -> (21,'Dr. Prakash Iyer','Male',910000021,'MBBS, MS',17,'Urology','Urologist','LIC-IND-1021'),
+    -> (22,'Dr. Aarti Sood','Female',910000022,'MBBS, MD',12,'Nephrology','Nephrologist','LIC-IND-1022'),
+    -> (23,'Dr. Sunil Agarwal','Male',910000023,'MBBS, MS',19,'Gastroenterology','Gastroenterologist','LIC-IND-1023'),
+    -> (24,'Dr. Kavya Menon','Female',910000024,'MBBS, MD',7,'Pulmonology','Pulmonologist','LIC-IND-1024'),
+    -> (25,'Dr. Tarun Bhatt','Male',910000025,'MBBS, MD',14,'Neurology','Neurologist','LIC-IND-1025');
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+mysql> table doctor_info;
++-----------+--------------------+--------+-----------+---------------+--------------+------------------+--------------------+----------------+
+| Doctor_ID | Doctor_Name        | gender | contact   | qualification | years_of_exp | department       | specialization     | licence_number |
++-----------+--------------------+--------+-----------+---------------+--------------+------------------+--------------------+----------------+
+|         1 | Dr. Rajesh Kumar   | Male   | 910000001 | MBBS, MD      |           15 | Cardiology       | Cardiologist       | LIC-IND-1001   |
+|         2 | Dr. Neha Sharma    | Female | 910000002 | MBBS, MS      |           10 | Gynecology       | Gynecologist       | LIC-IND-1002   |
+|         3 | Dr. Amit Verma     | Male   | 910000003 | MBBS, MD      |           12 | Neurology        | Neurologist        | LIC-IND-1003   |
+|         4 | Dr. Pooja Mehta    | Female | 910000004 | MBBS, DGO     |            8 | Gynecology       | Gynecologist       | LIC-IND-1004   |
+|         5 | Dr. Rohit Singh    | Male   | 910000005 | MBBS, MS      |           14 | Orthopedics      | Orthopedic         | LIC-IND-1005   |
+|         6 | Dr. Anjali Gupta   | Female | 910000006 | MBBS, MD      |            9 | Dermatology      | Dermatologist      | LIC-IND-1006   |
+|         7 | Dr. Vikas Yadav    | Male   | 910000007 | MBBS, MD      |           11 | General          | Physician          | LIC-IND-1007   |
+|         8 | Dr. Sneha Iyer     | Female | 910000008 | MBBS, MD      |            7 | Pediatrics       | Pediatrician       | LIC-IND-1008   |
+|         9 | Dr. Suresh Rao     | Male   | 910000009 | MBBS, MS      |           16 | ENT              | ENT Specialist     | LIC-IND-1009   |
+|        10 | Dr. Kavita Nair    | Female | 910000010 | MBBS, MD      |           13 | Psychiatry       | Psychiatrist       | LIC-IND-1010   |
+|        11 | Dr. Arjun Malhotra | Male   | 910000011 | MBBS, MS      |           18 | Surgery          | Surgeon            | LIC-IND-1011   |
+|        12 | Dr. Ritu Bansal    | Female | 910000012 | MBBS, MD      |           10 | Oncology         | Oncologist         | LIC-IND-1012   |
+|        13 | Dr. Nikhil Joshi   | Male   | 910000013 | MBBS, MD      |            9 | Radiology        | Radiologist        | LIC-IND-1013   |
+|        14 | Dr. Meena Reddy    | Female | 910000014 | MBBS, DCH     |            6 | Pediatrics       | Pediatrician       | LIC-IND-1014   |
+|        15 | Dr. Sanjay Kapoor  | Male   | 910000015 | MBBS, MD      |           20 | Cardiology       | Cardiologist       | LIC-IND-1015   |
+|        16 | Dr. Alka Mishra    | Female | 910000016 | MBBS, MD      |           11 | Pathology        | Pathologist        | LIC-IND-1016   |
+|        17 | Dr. Deepak Chauhan | Male   | 910000017 | MBBS, MS      |           13 | Orthopedics      | Orthopedic         | LIC-IND-1017   |
+|        18 | Dr. Simran Kaur    | Female | 910000018 | MBBS, MD      |            8 | Gynecology       | Gynecologist       | LIC-IND-1018   |
+|        19 | Dr. Mohit Saxena   | Male   | 910000019 | MBBS, MD      |           10 | General          | Physician          | LIC-IND-1019   |
+|        20 | Dr. Nisha Khanna   | Female | 910000020 | MBBS, MD      |            9 | Endocrinology    | Endocrinologist    | LIC-IND-1020   |
+|        21 | Dr. Prakash Iyer   | Male   | 910000021 | MBBS, MS      |           17 | Urology          | Urologist          | LIC-IND-1021   |
+|        22 | Dr. Aarti Sood     | Female | 910000022 | MBBS, MD      |           12 | Nephrology       | Nephrologist       | LIC-IND-1022   |
+|        23 | Dr. Sunil Agarwal  | Male   | 910000023 | MBBS, MS      |           19 | Gastroenterology | Gastroenterologist | LIC-IND-1023   |
+|        24 | Dr. Kavya Menon    | Female | 910000024 | MBBS, MD      |            7 | Pulmonology      | Pulmonologist      | LIC-IND-1024   |
+|        25 | Dr. Tarun Bhatt    | Male   | 910000025 | MBBS, MD      |           14 | Neurology        | Neurologist        | LIC-IND-1025   |
++-----------+--------------------+--------+-----------+---------------+--------------+------------------+--------------------+----------------+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+INSERT INTO medical_history
+    -> (Medical_ID, Patient_ID, allergies, surgeries, medication)
+    -> VALUES
+    -> (101, 3, 'Dust', NULL, 'Cetirizine'),
+    -> (102, 7, NULL, 'Appendectomy', 'Amoxicillin'),
+    -> (103, 12, 'Pollen', NULL, 'Montelukast'),
+    -> (104, 3, NULL, NULL, 'Vitamin C'),
+    -> (105, 19, 'Penicillin', NULL, 'Paracetamol'),
+    ->
+    -> (106, 5, NULL, 'Knee Surgery', 'Painkillers'),
+    -> (107, 14, 'Seafood', NULL, 'Antihistamine'),
+    -> (108, 9, NULL, NULL, 'BP Medicine'),
+    -> (109, 21, 'Milk', NULL, 'Calcium'),
+    -> (110, 7, NULL, NULL, 'Iron Tablets'),
+    ->
+    -> (111, 2, 'Egg', NULL, 'Vitamin B12'),
+    -> (112, 18, NULL, 'Gallbladder Surgery', 'Omeprazole'),
+    -> (113, 10, 'Latex', NULL, 'Hydrocortisone'),
+    -> (114, 25, NULL, NULL, 'Thyroid Medicine'),
+    -> (115, 1, 'Peanuts', NULL, 'Antiallergic'),
+    ->
+    -> (116, 4, NULL, 'Tonsil Surgery', 'Antibiotics'),
+    -> (117, 16, 'Dust', NULL, 'Cetirizine'),
+    -> (118, 22, NULL, NULL, 'Cholesterol Medicine'),
+    -> (119, 6, 'Pollen', NULL, 'Levocetirizine'),
+    -> (120, 11, NULL, 'Fracture Surgery', 'Painkillers'),
+    ->
+    -> (121, 8, 'Seafood', NULL, 'Antihistamine'),
+    -> (122, 15, NULL, NULL, 'Diabetes Medicine'),
+    -> (123, 20, 'Penicillin', NULL, 'Azithromycin'),
+    -> (124, 13, NULL, 'Eye Surgery', 'Eye Drops'),
+    -> (125, 17, 'Dust', NULL, 'Cetirizine');
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+mysql> table medical_history;
++------------+------------+------------+---------------------+----------------------+
+| Medical_ID | Patient_ID | allergies  | surgeries           | medication           |
++------------+------------+------------+---------------------+----------------------+
+|        101 |          3 | Dust       | NULL                | Cetirizine           |
+|        102 |          7 | NULL       | Appendectomy        | Amoxicillin          |
+|        103 |         12 | Pollen     | NULL                | Montelukast          |
+|        104 |          3 | NULL       | NULL                | Vitamin C            |
+|        105 |         19 | Penicillin | NULL                | Paracetamol          |
+|        106 |          5 | NULL       | Knee Surgery        | Painkillers          |
+|        107 |         14 | Seafood    | NULL                | Antihistamine        |
+|        108 |          9 | NULL       | NULL                | BP Medicine          |
+|        109 |         21 | Milk       | NULL                | Calcium              |
+|        110 |          7 | NULL       | NULL                | Iron Tablets         |
+|        111 |          2 | Egg        | NULL                | Vitamin B12          |
+|        112 |         18 | NULL       | Gallbladder Surgery | Omeprazole           |
+|        113 |         10 | Latex      | NULL                | Hydrocortisone       |
+|        114 |         25 | NULL       | NULL                | Thyroid Medicine     |
+|        115 |          1 | Peanuts    | NULL                | Antiallergic         |
+|        116 |          4 | NULL       | Tonsil Surgery      | Antibiotics          |
+|        117 |         16 | Dust       | NULL                | Cetirizine           |
+|        118 |         22 | NULL       | NULL                | Cholesterol Medicine |
+|        119 |          6 | Pollen     | NULL                | Levocetirizine       |
+|        120 |         11 | NULL       | Fracture Surgery    | Painkillers          |
+|        121 |          8 | Seafood    | NULL                | Antihistamine        |
+|        122 |         15 | NULL       | NULL                | Diabetes Medicine    |
+|        123 |         20 | Penicillin | NULL                | Azithromycin         |
+|        124 |         13 | NULL       | Eye Surgery         | Eye Drops            |
+|        125 |         17 | Dust       | NULL                | Cetirizine           |
++------------+------------+------------+---------------------+----------------------+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+INSERT INTO encounter_records
+    -> (Record_ID, visit_date, follow_up_date, reason, visit_type, encounter_status, Patient_ID, Doctor_ID)
+    -> VALUES
+    -> (2001,'2026-01-03',NULL,'Fever','OPD','Completed',5,7),
+    -> (2002,'2026-01-04','2026-01-15','Chest Pain','OPD','Completed',3,1),
+    -> (2003,'2026-01-05',NULL,'Skin Allergy','OPD','Completed',8,6),
+    -> (2004,'2026-01-06',NULL,'Accident Injury','Emergency','Admitted',12,5),
+    -> (2005,'2026-01-07','2026-01-20','Diabetes Followup','Follow-up','Completed',5,19),
+    ->
+    -> (2006,'2026-01-08',NULL,'Headache','OPD','Completed',1,3),
+    -> (2007,'2026-01-09','2026-01-18','Heart Checkup','OPD','Completed',9,15),
+    -> (2008,'2026-01-10',NULL,'Depression','OPD','Ongoing',4,10),
+    -> (2009,'2026-01-11',NULL,'Fracture','Emergency','Admitted',12,5),
+    -> (2010,'2026-01-12','2026-01-25','BP Followup','Follow-up','Completed',3,7),
+    ->
+    -> (2011,'2026-01-13',NULL,'Cold & Cough','OPD','Completed',15,7),
+    -> (2012,'2026-01-14',NULL,'Pregnancy Check','OPD','Completed',6,2),
+    -> (2013,'2026-01-15','2026-01-28','Back Pain','OPD','Completed',5,17),
+    -> (2014,'2026-01-16',NULL,'Child Fever','OPD','Completed',8,8),
+    -> (2015,'2026-01-17',NULL,'Anxiety','OPD','Completed',4,10),
+    ->
+    -> (2016,'2026-01-18','2026-02-01','Knee Pain','OPD','Completed',12,5),
+    -> (2017,'2026-01-19',NULL,'Thyroid Test','OPD','Completed',20,20),
+    -> (2018,'2026-01-20','2026-02-03','Heart Surgery','Surgery','Admitted',9,15),
+    -> (2019,'2026-01-21',NULL,'ENT Infection','OPD','Completed',3,9),
+    -> (2020,'2026-01-22','2026-02-05','General Checkup','OPD','Completed',1,7),
+    ->
+    -> (2021,'2026-01-23',NULL,'Skin Rash','OPD','Completed',8,6),
+    -> (2022,'2026-01-24','2026-02-06','Migraine','OPD','Completed',5,3),
+    -> (2023,'2026-01-25',NULL,'Urine Infection','OPD','Completed',6,21),
+    -> (2024,'2026-01-26','2026-02-08','BP Problem','Follow-up','Completed',3,7),
+    -> (2025,'2026-01-27',NULL,'Breathing Issue','Emergency','Admitted',12,24);
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+
+
+ table encounter_records;
++-----------+------------+----------------+-------------------+------------+------------------+------------+-----------+
+| Record_ID | visit_date | follow_up_date | reason            | visit_type | encounter_status | Patient_ID | Doctor_ID |
++-----------+------------+----------------+-------------------+------------+------------------+------------+-----------+
+|      2001 | 2026-01-03 | NULL           | Fever             | OPD        | Completed        |          5 |         7 |
+|      2002 | 2026-01-04 | 2026-01-15     | Chest Pain        | OPD        | Completed        |          3 |         1 |
+|      2003 | 2026-01-05 | NULL           | Skin Allergy      | OPD        | Completed        |          8 |         6 |
+|      2004 | 2026-01-06 | NULL           | Accident Injury   | Emergency  | Admitted         |         12 |         5 |
+|      2005 | 2026-01-07 | 2026-01-20     | Diabetes Followup | Follow-up  | Completed        |          5 |        19 |
+|      2006 | 2026-01-08 | NULL           | Headache          | OPD        | Completed        |          1 |         3 |
+|      2007 | 2026-01-09 | 2026-01-18     | Heart Checkup     | OPD        | Completed        |          9 |        15 |
+|      2008 | 2026-01-10 | NULL           | Depression        | OPD        | Ongoing          |          4 |        10 |
+|      2009 | 2026-01-11 | NULL           | Fracture          | Emergency  | Admitted         |         12 |         5 |
+|      2010 | 2026-01-12 | 2026-01-25     | BP Followup       | Follow-up  | Completed        |          3 |         7 |
+|      2011 | 2026-01-13 | NULL           | Cold & Cough      | OPD        | Completed        |         15 |         7 |
+|      2012 | 2026-01-14 | NULL           | Pregnancy Check   | OPD        | Completed        |          6 |         2 |
+|      2013 | 2026-01-15 | 2026-01-28     | Back Pain         | OPD        | Completed        |          5 |        17 |
+|      2014 | 2026-01-16 | NULL           | Child Fever       | OPD        | Completed        |          8 |         8 |
+|      2015 | 2026-01-17 | NULL           | Anxiety           | OPD        | Completed        |          4 |        10 |
+|      2016 | 2026-01-18 | 2026-02-01     | Knee Pain         | OPD        | Completed        |         12 |         5 |
+|      2017 | 2026-01-19 | NULL           | Thyroid Test      | OPD        | Completed        |         20 |        20 |
+|      2018 | 2026-01-20 | 2026-02-03     | Heart Surgery     | Surgery    | Admitted         |          9 |        15 |
+|      2019 | 2026-01-21 | NULL           | ENT Infection     | OPD        | Completed        |          3 |         9 |
+|      2020 | 2026-01-22 | 2026-02-05     | General Checkup   | OPD        | Completed        |          1 |         7 |
+|      2021 | 2026-01-23 | NULL           | Skin Rash         | OPD        | Completed        |          8 |         6 |
+|      2022 | 2026-01-24 | 2026-02-06     | Migraine          | OPD        | Completed        |          5 |         3 |
+|      2023 | 2026-01-25 | NULL           | Urine Infection   | OPD        | Completed        |          6 |        21 |
+|      2024 | 2026-01-26 | 2026-02-08     | BP Problem        | Follow-up  | Completed        |          3 |         7 |
+|      2025 | 2026-01-27 | NULL           | Breathing Issue   | Emergency  | Admitted         |         12 |        24 |
++-----------+------------+----------------+-------------------+------------+------------------+------------+-----------+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO medicine
+    -> (medicine_name, category, strength, description, expiry_date, price)
+    -> VALUES
+    -> ('Paracetamol','Tablet','500 mg','Pain and fever reducer','2027-06-30',25.00),
+    -> ('Amoxicillin','Capsule','250 mg','Antibiotic for bacterial infection','2027-08-15',120.00),
+    -> ('Cetirizine','Tablet','10 mg','Anti allergic medicine','2027-04-20',30.00),
+    -> ('Ibuprofen','Tablet','400 mg','Pain and inflammation','2027-09-10',45.00),
+    -> ('Azithromycin','Tablet','500 mg','Broad spectrum antibiotic','2027-12-05',180.00),
+    ->
+    -> ('Metformin','Tablet','500 mg','Diabetes control medicine','2028-01-25',90.00),
+    -> ('Amlodipine','Tablet','5 mg','Blood pressure medicine','2027-11-30',70.00),
+    -> ('Atorvastatin','Tablet','10 mg','Cholesterol lowering medicine','2028-03-18',110.00),
+    -> ('Omeprazole','Capsule','20 mg','Acidity and GERD treatment','2027-07-12',60.00),
+    -> ('Montelukast','Tablet','10 mg','Asthma and allergy medicine','2028-02-14',140.00),
+    ->
+    -> ('Levocetirizine','Tablet','5 mg','Allergy relief','2027-10-22',35.00),
+    -> ('Losartan','Tablet','50 mg','Hypertension medicine','2028-04-05',95.00),
+    -> ('Pantoprazole','Tablet','40 mg','Stomach acid control','2027-09-01',65.00),
+    -> ('Vitamin D3','Capsule','60000 IU','Vitamin supplement','2029-01-10',55.00),
+    -> ('Calcium Carbonate','Tablet','500 mg','Bone strength supplement','2028-06-17',40.00),
+    ->
+    -> ('Insulin Regular','Injection','40 IU/ml','Diabetes insulin injection','2027-05-30',450.00),
+    -> ('Cough Syrup DX','Syrup','100 ml','Dry cough relief','2027-03-25',85.00),
+    -> ('Salbutamol','Inhaler','100 mcg','Asthma inhaler','2028-08-08',220.00),
+    -> ('Dolo 650','Tablet','650 mg','Fever and pain relief','2027-12-20',32.00),
+    -> ('Diclofenac','Tablet','50 mg','Painkiller','2027-10-15',48.00),
+    ->
+    -> ('Hydroxychloroquine','Tablet','200 mg','Autoimmune disease medicine','2028-02-28',160.00),
+    -> ('Ondansetron','Tablet','4 mg','Anti vomiting medicine','2027-09-19',75.00),
+    -> ('Ranitidine','Tablet','150 mg','Acidity medicine','2027-11-11',50.00),
+    -> ('Clopidogrel','Tablet','75 mg','Blood thinner','2028-05-05',130.00),
+    -> ('Thyroxine','Tablet','50 mcg','Thyroid hormone medicine','2029-02-02',60.00);
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+
+ table medicine;
++-------------+--------------------+-----------+----------+------------------------------------+-------------+--------+
+| medicine_id | medicine_name      | category  | strength | description                        | expiry_date | price  |
++-------------+--------------------+-----------+----------+------------------------------------+-------------+--------+
+|           1 | Paracetamol        | Tablet    | 500 mg   | Pain and fever reducer             | 2027-06-30  |  25.00 |
+|           2 | Amoxicillin        | Capsule   | 250 mg   | Antibiotic for bacterial infection | 2027-08-15  | 120.00 |
+|           3 | Cetirizine         | Tablet    | 10 mg    | Anti allergic medicine             | 2027-04-20  |  30.00 |
+|           4 | Ibuprofen          | Tablet    | 400 mg   | Pain and inflammation              | 2027-09-10  |  45.00 |
+|           5 | Azithromycin       | Tablet    | 500 mg   | Broad spectrum antibiotic          | 2027-12-05  | 180.00 |
+|           6 | Metformin          | Tablet    | 500 mg   | Diabetes control medicine          | 2028-01-25  |  90.00 |
+|           7 | Amlodipine         | Tablet    | 5 mg     | Blood pressure medicine            | 2027-11-30  |  70.00 |
+|           8 | Atorvastatin       | Tablet    | 10 mg    | Cholesterol lowering medicine      | 2028-03-18  | 110.00 |
+|           9 | Omeprazole         | Capsule   | 20 mg    | Acidity and GERD treatment         | 2027-07-12  |  60.00 |
+|          10 | Montelukast        | Tablet    | 10 mg    | Asthma and allergy medicine        | 2028-02-14  | 140.00 |
+|          11 | Levocetirizine     | Tablet    | 5 mg     | Allergy relief                     | 2027-10-22  |  35.00 |
+|          12 | Losartan           | Tablet    | 50 mg    | Hypertension medicine              | 2028-04-05  |  95.00 |
+|          13 | Pantoprazole       | Tablet    | 40 mg    | Stomach acid control               | 2027-09-01  |  65.00 |
+|          14 | Vitamin D3         | Capsule   | 60000 IU | Vitamin supplement                 | 2029-01-10  |  55.00 |
+|          15 | Calcium Carbonate  | Tablet    | 500 mg   | Bone strength supplement           | 2028-06-17  |  40.00 |
+|          16 | Insulin Regular    | Injection | 40 IU/ml | Diabetes insulin injection         | 2027-05-30  | 450.00 |
+|          17 | Cough Syrup DX     | Syrup     | 100 ml   | Dry cough relief                   | 2027-03-25  |  85.00 |
+|          18 | Salbutamol         | Inhaler   | 100 mcg  | Asthma inhaler                     | 2028-08-08  | 220.00 |
+|          19 | Dolo 650           | Tablet    | 650 mg   | Fever and pain relief              | 2027-12-20  |  32.00 |
+|          20 | Diclofenac         | Tablet    | 50 mg    | Painkiller                         | 2027-10-15  |  48.00 |
+|          21 | Hydroxychloroquine | Tablet    | 200 mg   | Autoimmune disease medicine        | 2028-02-28  | 160.00 |
+|          22 | Ondansetron        | Tablet    | 4 mg     | Anti vomiting medicine             | 2027-09-19  |  75.00 |
+|          23 | Ranitidine         | Tablet    | 150 mg   | Acidity medicine                   | 2027-11-11  |  50.00 |
+|          24 | Clopidogrel        | Tablet    | 75 mg    | Blood thinner                      | 2028-05-05  | 130.00 |
+|          25 | Thyroxine          | Tablet    | 50 mcg   | Thyroid hormone medicine           | 2029-02-02  |  60.00 |
++-------------+--------------------+-----------+----------+------------------------------------+-------------+--------+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+INSERT INTO prescription
+    -> (Prescription_ID, dosage, duration, Instructions, prescribed_date, record_id)
+    -> VALUES
+    -> (6105,'1-0-1','10 days','After food','2026-01-15',2013),
+    -> (6101,'1-0-1','5 days','After food','2026-01-03',2001),
+    -> (6120,'0-1-0','10 days','Avoid oily food','2026-01-09',2007),
+    -> (6112,'1-1-0','30 days','Monitor sugar','2026-01-07',2005),
+    -> (6133,'1-0-0','20 days','Use knee support','2026-01-18',2016),
+    ->
+    -> (6102,'0-0-1','5 days','Before sleep','2026-01-03',2001),
+    -> (6125,'1-0-1','7 days','Steam inhalation','2026-01-13',2011),
+    -> (6118,'1-0-1','20 days','Bed rest','2026-01-11',2009),
+    -> (6130,'0-0-1','10 days','Pain gel apply','2026-01-15',2013),
+    -> (6108,'1-0-0','14 days','Morning only','2026-01-06',2004),
+    ->
+    -> (6122,'1-1-1','15 days','Sleep well','2026-01-10',2008),
+    -> (6110,'1-1-1','7 days','Before food','2026-01-04',2002),
+    -> (6128,'0-1-1','7 days','Child dose','2026-01-16',2014),
+    -> (6113,'0-0-1','30 days','Night dose','2026-01-07',2005),
+    -> (6135,'0-0-1','14 days','Meditation','2026-01-17',2015),
+    ->
+    -> (6106,'0-1-0','10 days','Avoid cold drinks','2026-01-05',2003),
+    -> (6116,'1-0-1','3 days','Drink water','2026-01-08',2006),
+    -> (6126,'0-1-0','5 days','Steam inhalation','2026-01-13',2011),
+    -> (6132,'1-1-1','14 days','Avoid stress','2026-01-17',2015),
+    -> (6109,'1-0-1','10 days','After food','2026-01-05',2003),
+    ->
+    -> (6114,'1-0-0','15 days','Diet control','2026-01-07',2005),
+    -> (6121,'1-0-1','10 days','Light exercise','2026-01-09',2007),
+    -> (6119,'0-1-0','10 days','Calcium rich diet','2026-01-11',2009),
+    -> (6129,'1-1-0','60 days','Monthly checkup','2026-01-14',2012),
+    -> (6117,'0-0-1','30 days','Reduce salt','2026-01-12',2010);
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+mysql> table prescription;
++-----------------+--------+----------+-------------------+-----------------+-----------+
+| Prescription_ID | dosage | duration | Instructions      | prescribed_date | record_id |
++-----------------+--------+----------+-------------------+-----------------+-----------+
+|            6101 | 1-0-1  | 5 days   | After food        | 2026-01-03      |      2001 |
+|            6102 | 0-0-1  | 5 days   | Before sleep      | 2026-01-03      |      2001 |
+|            6105 | 1-0-1  | 10 days  | After food        | 2026-01-15      |      2013 |
+|            6106 | 0-1-0  | 10 days  | Avoid cold drinks | 2026-01-05      |      2003 |
+|            6108 | 1-0-0  | 14 days  | Morning only      | 2026-01-06      |      2004 |
+|            6109 | 1-0-1  | 10 days  | After food        | 2026-01-05      |      2003 |
+|            6110 | 1-1-1  | 7 days   | Before food       | 2026-01-04      |      2002 |
+|            6112 | 1-1-0  | 30 days  | Monitor sugar     | 2026-01-07      |      2005 |
+|            6113 | 0-0-1  | 30 days  | Night dose        | 2026-01-07      |      2005 |
+|            6114 | 1-0-0  | 15 days  | Diet control      | 2026-01-07      |      2005 |
+|            6116 | 1-0-1  | 3 days   | Drink water       | 2026-01-08      |      2006 |
+|            6117 | 0-0-1  | 30 days  | Reduce salt       | 2026-01-12      |      2010 |
+|            6118 | 1-0-1  | 20 days  | Bed rest          | 2026-01-11      |      2009 |
+|            6119 | 0-1-0  | 10 days  | Calcium rich diet | 2026-01-11      |      2009 |
+|            6120 | 0-1-0  | 10 days  | Avoid oily food   | 2026-01-09      |      2007 |
+|            6121 | 1-0-1  | 10 days  | Light exercise    | 2026-01-09      |      2007 |
+|            6122 | 1-1-1  | 15 days  | Sleep well        | 2026-01-10      |      2008 |
+|            6125 | 1-0-1  | 7 days   | Steam inhalation  | 2026-01-13      |      2011 |
+|            6126 | 0-1-0  | 5 days   | Steam inhalation  | 2026-01-13      |      2011 |
+|            6128 | 0-1-1  | 7 days   | Child dose        | 2026-01-16      |      2014 |
+|            6129 | 1-1-0  | 60 days  | Monthly checkup   | 2026-01-14      |      2012 |
+|            6130 | 0-0-1  | 10 days  | Pain gel apply    | 2026-01-15      |      2013 |
+|            6132 | 1-1-1  | 14 days  | Avoid stress      | 2026-01-17      |      2015 |
+|            6133 | 1-0-0  | 20 days  | Use knee support  | 2026-01-18      |      2016 |
+|            6135 | 0-0-1  | 14 days  | Meditation        | 2026-01-17      |      2015 |
++-----------------+--------+----------+-------------------+-----------------+-----------+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+INSERT INTO diagnostic_test
+    -> (Test_ID, Test_type, description, test_date, result_status, remarks)
+    -> VALUES
+    -> (4001,'Blood Test','Complete blood count','2026-01-03','Normal','No issues'),
+    -> (4002,'ECG','Heart activity test','2026-01-04','Normal','Stable'),
+    -> (4003,'X-Ray','Chest X-ray','2026-01-05','Normal','Clear'),
+    -> (4004,'MRI','Brain scan','2026-01-06','Normal','No abnormality'),
+    -> (4005,'Blood Sugar','Diabetes test','2026-01-07','High','Diet advised'),
+    ->
+    -> (4006,'Urine Test','Routine urine test','2026-01-08','Normal','No infection'),
+    -> (4007,'CT Scan','Head CT scan','2026-01-09','Normal','No injury'),
+    -> (4008,'Thyroid Test','TSH level test','2026-01-10','Low','Medication needed'),
+    -> (4009,'Blood Test','Hemoglobin test','2026-01-11','Low','Iron supplements'),
+    -> (4010,'ECG','Cardiac screening','2026-01-12','Normal','Good'),
+    ->
+    -> (4011,'X-Ray','Leg X-ray','2026-01-13','Abnormal','Minor fracture'),
+    -> (4012,'MRI','Spine MRI','2026-01-14','Normal','Healthy'),
+    -> (4013,'Blood Sugar','Fasting sugar','2026-01-15','High','Exercise advised'),
+    -> (4014,'Urine Test','Kidney test','2026-01-16','Normal','OK'),
+    -> (4015,'Blood Test','Platelet count','2026-01-17','Normal','Stable'),
+    ->
+    -> (4016,'ECG','Heart rhythm test','2026-01-18','Abnormal','Follow-up required'),
+    -> (4017,'CT Scan','Abdominal CT','2026-01-19','Normal','Clear'),
+    -> (4018,'X-Ray','Chest pain scan','2026-01-20','Normal','No problem'),
+    -> (4019,'Blood Test','Cholesterol test','2026-01-21','High','Low-fat diet'),
+    -> (4020,'MRI','Knee MRI','2026-01-22','Normal','Physio advised'),
+    ->
+    -> (4021,'Thyroid Test','T3 T4 test','2026-01-23','Normal','Balanced'),
+    -> (4022,'Blood Sugar','Random sugar test','2026-01-24','Normal','Controlled'),
+    -> (4023,'ECG','Pre-surgery ECG','2026-01-25','Normal','Fit for surgery'),
+    -> (4024,'Urine Test','UTI test','2026-01-26','Positive','Antibiotics given'),
+    -> (4025,'Blood Test','Vitamin D test','2026-01-27','Low','Supplements needed');
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+
+
+table diagnostic_test;
++---------+--------------+----------------------+------------+---------------+--------------------+
+| Test_ID | Test_type    | description          | test_date  | result_status | remarks            |
++---------+--------------+----------------------+------------+---------------+--------------------+
+|    4001 | Blood Test   | Complete blood count | 2026-01-03 | Normal        | No issues          |
+|    4002 | ECG          | Heart activity test  | 2026-01-04 | Normal        | Stable             |
+|    4003 | X-Ray        | Chest X-ray          | 2026-01-05 | Normal        | Clear              |
+|    4004 | MRI          | Brain scan           | 2026-01-06 | Normal        | No abnormality     |
+|    4005 | Blood Sugar  | Diabetes test        | 2026-01-07 | High          | Diet advised       |
+|    4006 | Urine Test   | Routine urine test   | 2026-01-08 | Normal        | No infection       |
+|    4007 | CT Scan      | Head CT scan         | 2026-01-09 | Normal        | No injury          |
+|    4008 | Thyroid Test | TSH level test       | 2026-01-10 | Low           | Medication needed  |
+|    4009 | Blood Test   | Hemoglobin test      | 2026-01-11 | Low           | Iron supplements   |
+|    4010 | ECG          | Cardiac screening    | 2026-01-12 | Normal        | Good               |
+|    4011 | X-Ray        | Leg X-ray            | 2026-01-13 | Abnormal      | Minor fracture     |
+|    4012 | MRI          | Spine MRI            | 2026-01-14 | Normal        | Healthy            |
+|    4013 | Blood Sugar  | Fasting sugar        | 2026-01-15 | High          | Exercise advised   |
+|    4014 | Urine Test   | Kidney test          | 2026-01-16 | Normal        | OK                 |
+|    4015 | Blood Test   | Platelet count       | 2026-01-17 | Normal        | Stable             |
+|    4016 | ECG          | Heart rhythm test    | 2026-01-18 | Abnormal      | Follow-up required |
+|    4017 | CT Scan      | Abdominal CT         | 2026-01-19 | Normal        | Clear              |
+|    4018 | X-Ray        | Chest pain scan      | 2026-01-20 | Normal        | No problem         |
+|    4019 | Blood Test   | Cholesterol test     | 2026-01-21 | High          | Low-fat diet       |
+|    4020 | MRI          | Knee MRI             | 2026-01-22 | Normal        | Physio advised     |
+|    4021 | Thyroid Test | T3 T4 test           | 2026-01-23 | Normal        | Balanced           |
+|    4022 | Blood Sugar  | Random sugar test    | 2026-01-24 | Normal        | Controlled         |
+|    4023 | ECG          | Pre-surgery ECG      | 2026-01-25 | Normal        | Fit for surgery    |
+|    4024 | Urine Test   | UTI test             | 2026-01-26 | Positive      | Antibiotics given  |
+|    4025 | Blood Test   | Vitamin D test       | 2026-01-27 | Low           | Supplements needed |
++---------+--------------+----------------------+------------+---------------+--------------------+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO encounter_diagnostic_test_result
+    -> (edtr_ID, record_Id, test_Id, result, test_date)
+    -> VALUES
+    -> (1,2001,4001,'Normal','2026-01-03'),
+    -> (2,2001,4002,'Normal','2026-01-03'),
+    ->
+    -> (3,2002,4003,'Normal','2026-01-04'),
+    ->
+    -> (4,2003,4001,'Low Hb','2026-01-05'),
+    -> (5,2003,4005,'High Sugar','2026-01-05'),
+    ->
+    -> (6,2004,4004,'Normal','2026-01-06'),
+    ->
+    -> (7,2005,4001,'Normal','2026-01-07'),
+    -> (8,2005,4008,'TSH High','2026-01-07'),
+    -> (9,2005,4006,'Normal','2026-01-07'),
+    ->
+    -> (10,2006,4002,'Normal','2026-01-08'),
+    ->
+    -> (11,2007,4011,'Minor fracture','2026-01-09'),
+    -> (12,2007,4013,'Borderline','2026-01-09'),
+    ->
+    -> (13,2008,4012,'Normal','2026-01-10'),
+    ->
+    -> (14,2009,4011,'Hairline crack','2026-01-11'),
+    -> (15,2009,4014,'Normal','2026-01-11'),
+    ->
+    -> (16,2010,4019,'High cholesterol','2026-01-12'),
+    ->
+    -> (17,2011,4006,'Infection','2026-01-13'),
+    -> (18,2011,4001,'Normal','2026-01-13'),
+    ->
+    -> (19,2012,4013,'High sugar','2026-01-14'),
+    ->
+    -> (20,2013,4020,'Minor issue','2026-01-15'),
+    -> (21,2013,4002,'Normal','2026-01-15'),
+    ->
+    -> (22,2014,4022,'Low level','2026-01-16'),
+    ->
+    -> (23,2015,4021,'Normal','2026-01-17'),
+    -> (24,2015,4001,'Normal','2026-01-17'),
+    ->
+    -> (25,2016,4007,'Normal','2026-01-18');
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+mysql> table encounter_diagnostic_test_result;
++---------+-----------+---------+------------------+------------+
+| edtr_ID | record_Id | test_Id | result           | test_date  |
++---------+-----------+---------+------------------+------------+
+|       1 |      2001 |    4001 | Normal           | 2026-01-03 |
+|       2 |      2001 |    4002 | Normal           | 2026-01-03 |
+|       3 |      2002 |    4003 | Normal           | 2026-01-04 |
+|       4 |      2003 |    4001 | Low Hb           | 2026-01-05 |
+|       5 |      2003 |    4005 | High Sugar       | 2026-01-05 |
+|       6 |      2004 |    4004 | Normal           | 2026-01-06 |
+|       7 |      2005 |    4001 | Normal           | 2026-01-07 |
+|       8 |      2005 |    4008 | TSH High         | 2026-01-07 |
+|       9 |      2005 |    4006 | Normal           | 2026-01-07 |
+|      10 |      2006 |    4002 | Normal           | 2026-01-08 |
+|      11 |      2007 |    4011 | Minor fracture   | 2026-01-09 |
+|      12 |      2007 |    4013 | Borderline       | 2026-01-09 |
+|      13 |      2008 |    4012 | Normal           | 2026-01-10 |
+|      14 |      2009 |    4011 | Hairline crack   | 2026-01-11 |
+|      15 |      2009 |    4014 | Normal           | 2026-01-11 |
+|      16 |      2010 |    4019 | High cholesterol | 2026-01-12 |
+|      17 |      2011 |    4006 | Infection        | 2026-01-13 |
+|      18 |      2011 |    4001 | Normal           | 2026-01-13 |
+|      19 |      2012 |    4013 | High sugar       | 2026-01-14 |
+|      20 |      2013 |    4020 | Minor issue      | 2026-01-15 |
+|      21 |      2013 |    4002 | Normal           | 2026-01-15 |
+|      22 |      2014 |    4022 | Low level        | 2026-01-16 |
+|      23 |      2015 |    4021 | Normal           | 2026-01-17 |
+|      24 |      2015 |    4001 | Normal           | 2026-01-17 |
+|      25 |      2016 |    4007 | Normal           | 2026-01-18 |
++---------+-----------+---------+------------------+------------+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+INSERT INTO procedure_surgeries
+    -> (Procedure_ID, Procedure_Name, Procedure_Type, departmet, estimated_cost, created_date)
+    -> VALUES
+    -> (7001,'Appendectomy','Surgery','General',45000.00,'2025-12-01'),
+    -> (7002,'Angioplasty','Surgery','Cardiology',180000.00,'2025-12-02'),
+    -> (7003,'Cataract Removal','Surgery','Ophthalmology',35000.00,'2025-12-03'),
+    -> (7004,'Knee Replacement','Surgery','Orthopedics',250000.00,'2025-12-04'),
+    -> (7005,'Gallbladder Removal','Surgery','General',90000.00,'2025-12-05'),
+    ->
+    -> (7006,'MRI Scan','Diagnostic','Radiology',6000.00,'2025-12-06'),
+    -> (7007,'CT Scan','Diagnostic','Radiology',8000.00,'2025-12-07'),
+    -> (7008,'Blood Transfusion','Procedure','Hematology',12000.00,'2025-12-08'),
+    -> (7009,'Dialysis','Procedure','Nephrology',15000.00,'2025-12-09'),
+    -> (7010,'Chemotherapy','Therapy','Oncology',30000.00,'2025-12-10'),
+    ->
+    -> (7011,'Physiotherapy','Therapy','Physiotherapy',2000.00,'2025-12-11'),
+    -> (7012,'ECG Test','Diagnostic','Cardiology',1500.00,'2025-12-12'),
+    -> (7013,'Endoscopy','Procedure','Gastroenterology',18000.00,'2025-12-13'),
+    -> (7014,'Colonoscopy','Procedure','Gastroenterology',22000.00,'2025-12-14'),
+    -> (7015,'Tonsillectomy','Surgery','ENT',40000.00,'2025-12-15'),
+    ->
+    -> (7016,'Hernia Repair','Surgery','General',85000.00,'2025-12-16'),
+    -> (7017,'Hip Replacement','Surgery','Orthopedics',280000.00,'2025-12-17'),
+    -> (7018,'Angiography','Diagnostic','Cardiology',25000.00,'2025-12-18'),
+    -> (7019,'Skin Biopsy','Procedure','Dermatology',7000.00,'2025-12-19'),
+    -> (7020,'Laser Eye Surgery','Surgery','Ophthalmology',95000.00,'2025-12-20'),
+    ->
+    -> (7021,'IV Fluid Therapy','Procedure','Emergency',3000.00,'2025-12-21'),
+    -> (7022,'Stent Placement','Surgery','Cardiology',200000.00,'2025-12-22'),
+    -> (7023,'Root Canal','Procedure','Dental',12000.00,'2025-12-23'),
+    -> (7024,'Ultrasound Scan','Diagnostic','Radiology',4000.00,'2025-12-24'),
+    -> (7025,'Vaccination','Procedure','General',500.00,'2025-12-25');
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+mysql> table procedure_surgeries;
++--------------+---------------------+----------------+------------------+----------------+--------------+
+| Procedure_ID | Procedure_Name      | Procedure_Type | departmet        | estimated_cost | created_date |
++--------------+---------------------+----------------+------------------+----------------+--------------+
+|         7001 | Appendectomy        | Surgery        | General          |       45000.00 | 2025-12-01   |
+|         7002 | Angioplasty         | Surgery        | Cardiology       |      180000.00 | 2025-12-02   |
+|         7003 | Cataract Removal    | Surgery        | Ophthalmology    |       35000.00 | 2025-12-03   |
+|         7004 | Knee Replacement    | Surgery        | Orthopedics      |      250000.00 | 2025-12-04   |
+|         7005 | Gallbladder Removal | Surgery        | General          |       90000.00 | 2025-12-05   |
+|         7006 | MRI Scan            | Diagnostic     | Radiology        |        6000.00 | 2025-12-06   |
+|         7007 | CT Scan             | Diagnostic     | Radiology        |        8000.00 | 2025-12-07   |
+|         7008 | Blood Transfusion   | Procedure      | Hematology       |       12000.00 | 2025-12-08   |
+|         7009 | Dialysis            | Procedure      | Nephrology       |       15000.00 | 2025-12-09   |
+|         7010 | Chemotherapy        | Therapy        | Oncology         |       30000.00 | 2025-12-10   |
+|         7011 | Physiotherapy       | Therapy        | Physiotherapy    |        2000.00 | 2025-12-11   |
+|         7012 | ECG Test            | Diagnostic     | Cardiology       |        1500.00 | 2025-12-12   |
+|         7013 | Endoscopy           | Procedure      | Gastroenterology |       18000.00 | 2025-12-13   |
+|         7014 | Colonoscopy         | Procedure      | Gastroenterology |       22000.00 | 2025-12-14   |
+|         7015 | Tonsillectomy       | Surgery        | ENT              |       40000.00 | 2025-12-15   |
+|         7016 | Hernia Repair       | Surgery        | General          |       85000.00 | 2025-12-16   |
+|         7017 | Hip Replacement     | Surgery        | Orthopedics      |      280000.00 | 2025-12-17   |
+|         7018 | Angiography         | Diagnostic     | Cardiology       |       25000.00 | 2025-12-18   |
+|         7019 | Skin Biopsy         | Procedure      | Dermatology      |        7000.00 | 2025-12-19   |
+|         7020 | Laser Eye Surgery   | Surgery        | Ophthalmology    |       95000.00 | 2025-12-20   |
+|         7021 | IV Fluid Therapy    | Procedure      | Emergency        |        3000.00 | 2025-12-21   |
+|         7022 | Stent Placement     | Surgery        | Cardiology       |      200000.00 | 2025-12-22   |
+|         7023 | Root Canal          | Procedure      | Dental           |       12000.00 | 2025-12-23   |
+|         7024 | Ultrasound Scan     | Diagnostic     | Radiology        |        4000.00 | 2025-12-24   |
+|         7025 | Vaccination         | Procedure      | General          |         500.00 | 2025-12-25   |
++--------------+---------------------+----------------+------------------+----------------+--------------+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO encounter_procedure_results
+    -> (epr_id, record_id, procedure_id, result, procedure_date, complications, post_operative_notes, recovery_time)
+    -> VALUES
+    -> (1,2001,7006,'Scan completed successfully','2026-01-03',NULL,'Patient stable','Same day'),
+    ->
+    -> (2,2001,7012,'Normal ECG result','2026-01-03',NULL,'No abnormality detected','Same day'),
+    ->
+    -> (3,2002,7024,'Ultrasound completed','2026-01-04',NULL,'No issues found','Same day'),
+    ->
+    -> (4,2003,7008,'Blood transfusion successful','2026-01-05','Mild fever','Monitor vitals','2 days'),
+    ->
+    -> (5,2003,7011,'Physiotherapy session done','2026-01-05',NULL,'Continue exercises','1 week'),
+    ->
+    -> (6,2004,7001,'Appendix removed successfully','2026-01-06','Minor infection','Antibiotics prescribed','3 weeks'),
+    ->
+    -> (7,2005,7018,'Angiography completed','2026-01-07',NULL,'Normal blood flow','2 days'),
+    ->
+    -> (8,2005,7022,'Stent placed successfully','2026-01-07','Mild chest pain','ICU monitoring','4 weeks'),
+    ->
+    -> (9,2006,7023,'Root canal completed','2026-01-08',NULL,'Avoid cold food','5 days'),
+    ->
+    -> (10,2007,7015,'Tonsils removed','2026-01-09','Sore throat','Soft diet recommended','2 weeks'),
+    ->
+    -> (11,2008,7004,'Knee replacement successful','2026-01-10','Swelling','Physiotherapy required','8 weeks'),
+    ->
+    -> (12,2009,7016,'Hernia repaired','2026-01-11',NULL,'No heavy lifting','4 weeks'),
+    ->
+    -> (13,2010,7009,'Dialysis session done','2026-01-12',NULL,'Next session in 3 days','Ongoing'),
+    ->
+    -> (14,2011,7013,'Endoscopy completed','2026-01-13',NULL,'Mild gastritis detected','Same day'),
+    ->
+    -> (15,2012,7020,'Laser eye surgery successful','2026-01-14','Dry eyes','Use eye drops','2 weeks'),
+    ->
+    -> (16,2013,7014,'Colonoscopy completed','2026-01-15',NULL,'No abnormalities','Same day'),
+    ->
+    -> (17,2014,7017,'Hip replacement done','2026-01-16','Blood loss','Iron supplements','10 weeks'),
+    ->
+    -> (18,2015,7019,'Skin biopsy completed','2026-01-17',NULL,'Await lab results','1 week'),
+    ->
+    -> (19,2016,7021,'IV fluids administered','2026-01-18',NULL,'Hydration improved','Same day'),
+    ->
+    -> (20,2017,7007,'CT scan completed','2026-01-19',NULL,'No injury found','Same day'),
+    ->
+    -> (21,2018,7003,'Cataract surgery successful','2026-01-20','Blurry vision','Avoid sunlight','3 weeks'),
+    ->
+    -> (22,2019,7010,'Chemotherapy session completed','2026-01-21','Nausea','Anti-nausea meds given','Ongoing'),
+    ->
+    -> (23,2020,7025,'Vaccination administered','2026-01-22','Mild fever','Paracetamol advised','2 days'),
+    ->
+    -> (24,2021,7005,'Gallbladder removed','2026-01-23','Digestive issues','Low-fat diet','5 weeks'),
+    ->
+    -> (25,2022,7018,'Angiography completed','2026-01-24',NULL,'Report normal','2 days');
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+mysql> table encounter_procedure_results;
++--------+-----------+--------------+--------------------------------+----------------+------------------+-------------------------+---------------+
+| epr_id | record_id | procedure_id | result                         | procedure_date | complications    | post_operative_notes    | recovery_time |
++--------+-----------+--------------+--------------------------------+----------------+------------------+-------------------------+---------------+
+|      1 |      2001 |         7006 | Scan completed successfully    | 2026-01-03     | NULL             | Patient stable          | Same day      |
+|      2 |      2001 |         7012 | Normal ECG result              | 2026-01-03     | NULL             | No abnormality detected | Same day      |
+|      3 |      2002 |         7024 | Ultrasound completed           | 2026-01-04     | NULL             | No issues found         | Same day      |
+|      4 |      2003 |         7008 | Blood transfusion successful   | 2026-01-05     | Mild fever       | Monitor vitals          | 2 days        |
+|      5 |      2003 |         7011 | Physiotherapy session done     | 2026-01-05     | NULL             | Continue exercises      | 1 week        |
+|      6 |      2004 |         7001 | Appendix removed successfully  | 2026-01-06     | Minor infection  | Antibiotics prescribed  | 3 weeks       |
+|      7 |      2005 |         7018 | Angiography completed          | 2026-01-07     | NULL             | Normal blood flow       | 2 days        |
+|      8 |      2005 |         7022 | Stent placed successfully      | 2026-01-07     | Mild chest pain  | ICU monitoring          | 4 weeks       |
+|      9 |      2006 |         7023 | Root canal completed           | 2026-01-08     | NULL             | Avoid cold food         | 5 days        |
+|     10 |      2007 |         7015 | Tonsils removed                | 2026-01-09     | Sore throat      | Soft diet recommended   | 2 weeks       |
+|     11 |      2008 |         7004 | Knee replacement successful    | 2026-01-10     | Swelling         | Physiotherapy required  | 8 weeks       |
+|     12 |      2009 |         7016 | Hernia repaired                | 2026-01-11     | NULL             | No heavy lifting        | 4 weeks       |
+|     13 |      2010 |         7009 | Dialysis session done          | 2026-01-12     | NULL             | Next session in 3 days  | Ongoing       |
+|     14 |      2011 |         7013 | Endoscopy completed            | 2026-01-13     | NULL             | Mild gastritis detected | Same day      |
+|     15 |      2012 |         7020 | Laser eye surgery successful   | 2026-01-14     | Dry eyes         | Use eye drops           | 2 weeks       |
+|     16 |      2013 |         7014 | Colonoscopy completed          | 2026-01-15     | NULL             | No abnormalities        | Same day      |
+|     17 |      2014 |         7017 | Hip replacement done           | 2026-01-16     | Blood loss       | Iron supplements        | 10 weeks      |
+|     18 |      2015 |         7019 | Skin biopsy completed          | 2026-01-17     | NULL             | Await lab results       | 1 week        |
+|     19 |      2016 |         7021 | IV fluids administered         | 2026-01-18     | NULL             | Hydration improved      | Same day      |
+|     20 |      2017 |         7007 | CT scan completed              | 2026-01-19     | NULL             | No injury found         | Same day      |
+|     21 |      2018 |         7003 | Cataract surgery successful    | 2026-01-20     | Blurry vision    | Avoid sunlight          | 3 weeks       |
+|     22 |      2019 |         7010 | Chemotherapy session completed | 2026-01-21     | Nausea           | Anti-nausea meds given  | Ongoing       |
+|     23 |      2020 |         7025 | Vaccination administered       | 2026-01-22     | Mild fever       | Paracetamol advised     | 2 days        |
+|     24 |      2021 |         7005 | Gallbladder removed            | 2026-01-23     | Digestive issues | Low-fat diet            | 5 weeks       |
+|     25 |      2022 |         7018 | Angiography completed          | 2026-01-24     | NULL             | Report normal           | 2 days        |
++--------+-----------+--------------+--------------------------------+----------------+------------------+-------------------------+---------------+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+NSERT INTO prescription_medicine (Prescription_ID, Medicine_ID)
+    -> VALUES
+    -> (6101,1),
+    -> (6101,4),
+    ->
+    -> (6102,2),
+    ->
+    -> (6105,3),
+    -> (6105,7),
+    ->
+    -> (6106,5),
+    ->
+    -> (6108,6),
+    -> (6108,10),
+    ->
+    -> (6109,8),
+    ->
+    -> (6110,9),
+    ->
+    -> (6112,11),
+    -> (6112,12),
+    ->
+    -> (6113,13),
+    ->
+    -> (6114,14),
+    ->
+    -> (6116,15),
+    -> (6116,16),
+    ->
+    -> (6117,17),
+    ->
+    -> (6118,18),
+    ->
+    -> (6119,19),
+    ->
+    -> (6120,20),
+    ->
+    -> (6121,21),
+    ->
+    -> (6122,22),
+    ->
+    -> (6125,23),
+    ->
+    -> (6126,24),
+    ->
+    -> (6128,25);
+Query OK, 25 rows affected (0.01 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+
+
+table prescription_medicine;
++-----------------+-------------+
+| Prescription_ID | Medicine_ID |
++-----------------+-------------+
+|            6101 |           1 |
+|            6102 |           2 |
+|            6105 |           3 |
+|            6101 |           4 |
+|            6106 |           5 |
+|            6108 |           6 |
+|            6105 |           7 |
+|            6109 |           8 |
+|            6110 |           9 |
+|            6108 |          10 |
+|            6112 |          11 |
+|            6112 |          12 |
+|            6113 |          13 |
+|            6114 |          14 |
+|            6116 |          15 |
+|            6116 |          16 |
+|            6117 |          17 |
+|            6118 |          18 |
+|            6119 |          19 |
+|            6120 |          20 |
+|            6121 |          21 |
+|            6122 |          22 |
+|            6125 |          23 |
+|            6126 |          24 |
+|            6128 |          25 |
++-----------------+-------------+
+
