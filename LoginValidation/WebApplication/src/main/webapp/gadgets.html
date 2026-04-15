@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Selection</title>
+
+    <style>
+        /* Modern Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Container Design */
+        .cart-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 380px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        /* Product Row Styling */
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 12px;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            border-color: #764ba2;
+            background-color: #f9f7ff;
+            transform: translateX(5px);
+        }
+
+        /* Hidden default checkbox + Custom Look */
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            accent-color: #764ba2;
+            cursor: pointer;
+        }
+
+        .product-name {
+            font-size: 1.05rem;
+            color: #444;
+            font-weight: 500;
+            flex-grow: 1;
+        }
+
+        /* Checkout Button */
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #764ba2;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+        }
+
+        input[type="submit"]:hover {
+            background: #5a3a7e;
+            transform: translateY(-2px);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        /* Subtle label instruction */
+        .hint {
+            text-align: center;
+            display: block;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cart-card">
+    
+        <form action="cart" name="cartform" method="post">
+            
+            <h2>Select Products</h2>
+            <span class="hint">Choose items to add to your cart</span>
+            
+            <label class="product-item">
+                <input type="checkbox" name="product" value="iphone"> 
+                <span class="product-name">iPhone</span>
+            </label>
+
+            <label class="product-item">
+                <input type="checkbox" name="product" value="ipod"> 
+                <span class="product-name">iPod</span>
+            </label>
+
+            <label class="product-item">
+                <input type="checkbox" name="product" value="macBook"> 
+                <span class="product-name">MacBook</span>
+            </label>
+            
+            <input type="submit" value="Proceed to Checkout">
+        
+        </form>
+        
+    </div>
+
+</body>
+</html>

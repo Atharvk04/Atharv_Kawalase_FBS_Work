@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        /* Modern Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        /* Signup Card */
+        #signupform {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* Input Styling */
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 20px;
+            border: 1.5px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+            background-color: #f9f9f9;
+        }
+
+        input:focus, select:focus {
+            border-color: #764ba2;
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
+        }
+
+        /* Submit Button */
+        input[type="submit"] {
+            background: #764ba2;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background: #5a3a7e;
+            transform: translateY(-1px);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(1px);
+        }
+
+        /* Footer Links */
+        h3 {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: #888;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        a {
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            display: block;
+            margin-top: 8px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Custom styling for the select dropdown */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="signupform" action="signup" method="post">
+        <h2>Join Us</h2>
+
+        <label for="un">Username</label>
+        <input type="text" name="username" id="un" placeholder="At least 6 characters" required>
+
+        <label for="pass">Password</label>
+        <input type="password" name="password" id="pass" placeholder="At least 8 characters" required>
+
+        <label for="secQ">Security Question</label>
+        <select name="security_question" id="secQ" required>
+            <option value="" disabled selected>Select a recovery question</option>
+            <option>Your favorite color?</option>
+            <option>Your birth city?</option>
+            <option>Your pet name?</option>
+            <option>Your first school name?</option>
+        </select>
+
+        <label for="secA">Security Answer</label>
+        <input type="text" name="security_answer" id="secA" placeholder="Your answer" required>
+
+        <input type="submit" value="Create Account">
+
+        <h3>Already have an account?</h3>
+        <a href="login.html">Login here</a>
+    </form>
+
+    <script>
+        window.onload = function () {
+            const form = document.getElementById("signupform");
+
+            form.addEventListener("submit", function (e) {
+                const username = document.getElementById("un").value.trim();
+                const password = document.getElementById("pass").value.trim();
+
+                // Validation Logic
+                if (username.length < 6) {
+                    alert("Username must be at least 6 characters");
+                    e.preventDefault();
+                    return;
+                }
+
+                if (password.length < 8) {
+                    alert("Password must be at least 8 characters");
+                    e.preventDefault();
+                    return;
+                }
+
+                // If validation passes, the alert shows and form submits
+                alert("Account created successfully!");
+            });
+        };
+    </script>
+
+</body>
+</html>
